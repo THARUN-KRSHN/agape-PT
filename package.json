@@ -1,0 +1,15 @@
+{
+  "name": "agapept",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "npm --prefix backend ci && npm --prefix frontend ci && npm --prefix frontend run build",
+    "start": "npm --prefix backend run start"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+
+

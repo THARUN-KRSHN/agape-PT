@@ -64,20 +64,12 @@ The server will serve files from `frontend/build` and handle API routes.
 
 ## Railway Deployment
 
-- Root project with `backend` and `frontend` folders
-- Railway service build command:
-
-```
-npm --prefix frontend ci && npm --prefix frontend run build && npm --prefix backend ci
-```
-
-- Start command:
-
-```
-npm --prefix backend run start
-```
-
+- Root project contains `frontend` and `backend`.
+- Zero-config deploy via GitHub: the root `package.json` provides postinstall and start scripts for Railway.
+  - Build command: (auto) `npm install` → runs root postinstall: builds frontend and installs backend.
+  - Start command: (auto) `npm start` → launches backend which serves React build.
 - Set environment variables in Railway dashboard (same as `.env`).
+- Add a persistent volume and mount it at `/mnt/data`.
 
 ## Email Configuration (SMTP)
 
